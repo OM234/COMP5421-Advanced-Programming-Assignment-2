@@ -14,7 +14,7 @@ pre/post-increment/decrement, subscripts, function objects,
 input/output operators, and relational operators.
 @return 0 to indicate success.
 */
-
+/*
 int main()
 {
    const Point4D ZERO;
@@ -182,4 +182,4 @@ int main()
 
    cout << "Test completed successfully!" << endl;
    return 0;
-}
+}*/
