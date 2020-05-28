@@ -21,8 +21,11 @@ public:
     Point4D(double, double); // 2 parameter constructor
     Point4D(double, double, double); // 3 parameter constructor
     Point4D(double, double, double, double); // 4 parameter constructor
-    Point4D(const Point4D &); //copy constructor
-    Point4D &inverse() const;
+    Point4D(const Point4D &); //copy constructor, default
+
+    Point4D &operator=(const Point4D &); //assignment operator, default
+    Point4D &inverse() const; //inverse function
+
     Point4D &operator*=(const Point4D &); //multiplication compound assignment operator overload
     Point4D &operator*=(double); //multiplication compound assignment operator overload
     Point4D &operator/=(const Point4D &); //division compound assignment operator overload
@@ -30,16 +33,25 @@ public:
     Point4D &operator+=(const Point4D &); //addition compound assignment operator overload
     Point4D &operator+=(double); //addition compound assignment operator overload
     Point4D &operator-=(const Point4D &); //subtraction compound assignment operator overload
-    bool operator==(const Point4D &);
-    Point4D &operator=(const Point4D &); //assignment operator overload
+    Point4D &operator-=(double); //subtraction compound assignment operator overload
+
     Point4D &operator+(); //unary plus operator overload
     Point4D &operator-();//unary minus operator overload
     Point4D &operator++(); //pre-increment operator overload
     Point4D &operator++(int); //post-increment operator overload
+    Point4D &operator--(); // pre-decrement operator overload
+    Point4D &operator--(int); // post-decrement operator overload
+
+    bool operator==(const Point4D &) const; //relational operator equals to overload
+    bool operator!=(const Point4D&) const; //relational operator not equals to overload
+    bool operator<(const Point4D&) const; //relational operator less than overload
+    bool operator>(const Point4D&) const; //relational operator greater than overload
+    bool operator<=(const Point4D&) const; //relational operator less than or equal to overload
+    bool operator>=(const Point4D&) const; //relational operator greater than or equal to overload
+
+    double absoluteVal(const Point4D&) const; //absolute value function
     static void setTolerance(double tol);
-
     static double getTolerance();
-
     //const std::array<double, 4> getPoint() const;
     std::string toString() const;
 };
