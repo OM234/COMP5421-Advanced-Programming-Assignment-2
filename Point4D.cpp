@@ -357,6 +357,25 @@ bool Point4D::operator>=(const Point4D& pointA) const { //relational operator gr
 // Relational operator overloads end
 //--------------------------------------------------------------
 
+double Point4D::operator[](int index) const { //subscript operator overload
+
+    double valAtIndex;
+
+    try {
+        if(index < 1 || index > 4) {
+
+            throw std::out_of_range("index out of bounds");
+        }
+        valAtIndex = this->point[--index];
+
+    } catch (exception &e) {
+
+        cout << e.what() << endl;
+    }
+
+    return valAtIndex;
+}
+
 double Point4D::absoluteVal(const Point4D &pointA) const { //absolute value function
 
     double absVal = std::abs(pointA.point[0]) + std::abs(pointA.point[1])
@@ -398,5 +417,5 @@ int main() {
     Point4D m1(2, 3, 4, 5);
     Point4D m2 = m1.inverse();
     Point4D m3 = m1;
-    cout << ((m3+0.001)>=m1);
+    cout << m3[4];
 }

@@ -49,6 +49,8 @@ public:
     bool operator<=(const Point4D&) const; //relational operator less than or equal to overload
     bool operator>=(const Point4D&) const; //relational operator greater than or equal to overload
 
+    double operator[](int index) const; //subscript operator overload
+
     double absoluteVal(const Point4D&) const; //absolute value function
     static void setTolerance(double tol);
     static double getTolerance();
