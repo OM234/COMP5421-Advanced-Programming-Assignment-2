@@ -23,19 +23,19 @@ public:
     Point4D(double, double, double, double); // 4 parameter constructor
     Point4D(const Point4D &); //copy constructor
     Point4D &inverse() const;
-    friend Point4D &operator*(const Point4D &, const Point4D &);
-    friend Point4D &operator*(double, const Point4D &);
-    friend Point4D &operator+(const Point4D &, const Point4D &); //binary addition operator overload
-    friend Point4D &operator+(double, const Point4D &); //scalar addition operator overload
-    friend Point4D &operator-(const Point4D &, const Point4D &); //binary subtraction operator overload
-    friend Point4D &operator-(double, const Point4D &); //scalar subtraction operator overload
-    friend Point4D &operator-(const Point4D &, double); //scalar subtraction operator overload
+    Point4D &operator*=(const Point4D &); //multiplication compound assignment operator overload
+    Point4D &operator*=(double); //multiplication compound assignment operator overload
+    Point4D &operator/=(const Point4D &); //division compound assignment operator overload
+    Point4D &operator/=(double); //division compound assignment operator overload
+    Point4D &operator+=(const Point4D &); //addition compound assignment operator overload
+    Point4D &operator+=(double); //addition compound assignment operator overload
+    Point4D &operator-=(const Point4D &); //subtraction compound assignment operator overload
     bool operator==(const Point4D &);
     Point4D &operator=(const Point4D &); //assignment operator overload
     Point4D &operator+(); //unary plus operator overload
     Point4D &operator-();//unary minus operator overload
     Point4D &operator++(); //pre-increment operator overload
-    Point4D &operator++(int); //pose-increment operator overload
+    Point4D &operator++(int); //post-increment operator overload
     static void setTolerance(double tol);
 
     static double getTolerance();
@@ -45,9 +45,12 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &, const Point4D &); //<< operator overload
-Point4D &operator*(const Point4D &, const Point4D &); // multiplication operator overload
+Point4D &operator*(const Point4D &, const Point4D &); //binary multiplication operator overload
 Point4D &operator*(double, const Point4D &); //scalar multiplication operator overload
 Point4D &operator*(const Point4D &, double); //scalar multiplication operator overload
+Point4D &operator/(const Point4D &, const Point4D &); //binary division operator overload
+Point4D &operator/(double, const Point4D &); //scalar division operator overload
+Point4D &operator/(const Point4D &, double); //scalar division operator overload
 Point4D &operator+(const Point4D &, const Point4D &); //binary addition operator overload
 Point4D &operator+(double, const Point4D &); //scalar addition operator overload
 Point4D &operator+(const Point4D &, double); //scalar addition operator overload
