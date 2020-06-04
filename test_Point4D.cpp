@@ -1,3 +1,10 @@
+//--------------------------------------------------------------
+//Name:         Osman Momoh
+//Student ID:   26220150
+//Course:       COMP 5421: Advanced Programming
+//Date:         5/28/2020, Summer 2020
+//--------------------------------------------------------------
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -8,13 +15,13 @@ using std::cin;
 using std::endl;
 
 /*
-Tests class Point4D. Specifically, tests constructors, compound assignment 
-operator overloads, basic arithmetic operator overloads, unary +, unary -, 
-pre/post-increment/decrement, subscripts, function objects, 
+Tests class Point4D. Specifically, tests constructors, compound assignment
+operator overloads, basic arithmetic operator overloads, unary +, unary -,
+pre/post-increment/decrement, subscripts, function objects,
 input/output operators, and relational operators.
 @return 0 to indicate success.
 */
-/*
+
 int main()
 {
    const Point4D ZERO;
@@ -45,7 +52,7 @@ int main()
    Point4D  m1_inverse = m1.inverse();              // inverse, copy ctor
 
    Point4D m1_inverse_times_m1 = m1_inverse * m1;   // Point4D * Point4D
-   assert(m1_inverse_times_m1 == IDENTITY);         // invariant, must hold     
+   assert(m1_inverse_times_m1 == IDENTITY);         // invariant, must hold
 
    Point4D m1_times_m1_inverse = m1 * m1_inverse;
    assert(m1_times_m1_inverse == IDENTITY);         // invariant, must hold
@@ -78,7 +85,7 @@ int main()
    assert(m3 == m1d);
    cout << "m3 = " << m3 << endl;
 
-   Point4D m4 = 1.0 - m3;                       // Point4D = double - Quad4D 
+   Point4D m4 = 1.0 - m3;                       // Point4D = double - Quad4D
    cout << "m4 = " << m4 << endl;
    assert(m4 == Point4D(-1, -2, -7, -4));
 
@@ -92,8 +99,8 @@ int main()
    assert(m6 == Point4D(2, 4, 14, 8));
    assert(m6 / -1.0 == m5);                  // Point4D = Quad4D / double
    assert(1/m6  == 1*m6.inverse());          // double / Quad4D, inverse
-   assert(-1.0 * m4  * 2.0 == m6);           // double * Quad4D * double 
- 
+   assert(-1.0 * m4  * 2.0 == m6);           // double * Quad4D * double
+
    Point4D m7 = m1++;                        //Point4D++
    cout << "m1 = " << m1 << endl;
    cout << "m7 = " << m7 << endl;
@@ -114,7 +121,7 @@ int main()
 
    Point4D m9(123, 6, 6, 4567.89);
    cout << "m9 = " << m9 << endl;
-                                    
+
    // subscripts (non-const)
    m9[1] = 3;
    m9[2] = 1;
@@ -175,11 +182,11 @@ int main()
    cout << "Please enter the numbers 1.5, 2.5, 3, 4, in that order\n\n";
    cin >> input;
    cout << "input = " << input << endl;
-   
+
    Point4D diff = input - Point4D(1.5, 2.5, 3, 4);
-   assert(diff.absValue() <= tol);    // absolute value  
+   assert(diff.absValue() <= tol);    // absolute value
    assert(diff() <= tol);             // function object
 
    cout << "Test completed successfully!" << endl;
    return 0;
-}*/
+}
