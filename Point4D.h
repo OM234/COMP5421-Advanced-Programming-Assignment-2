@@ -65,7 +65,7 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &, const Point4D &); //insertion << operator overload
-std::istream &operator>>(std::istream &is, const Point4D &); //extraction >> operator overload
+std::istream &operator>>(std::istream &is, Point4D &); //extraction >> operator overload
 
 Point4D operator*(const Point4D &, const Point4D &); //binary multiplication operator overload
 Point4D operator*(double, const Point4D &); //scalar multiplication operator overload
